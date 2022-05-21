@@ -1,0 +1,6 @@
+export_paths:
+  - public/webfont
+  - frost
+  - package.json
+  - tailwind.config.js
+  - webpack.mix.js

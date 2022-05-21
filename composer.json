@@ -1,0 +1,9 @@
+{
+    "name": "my-vendor-name/frost",
+    "extra": {
+        "statamic": {
+            "name": "Frost",
+            "description": "Frost starter kit"
+        }
+    }
+}
