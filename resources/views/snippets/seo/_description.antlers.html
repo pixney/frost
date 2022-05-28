@@ -1,0 +1,19 @@
+{{# 
+    @name Meta Description
+    @description Google will sometimes use the <meta name="description"> tag 
+    from a page to generate a snippet in search results, if we think it gives 
+    users a more accurate description than would be possible purely from the 
+    on-page content. A meta description tag generally informs and interests 
+    users with a short, relevant summary of what a particular page is about. 
+    They are like a pitch that convince the user that the page is exactly what 
+    they're looking for. There's no limit on how long a meta description can be, 
+    but the snippet is truncated in Google Search results as needed, typically 
+    to fit the device width.
+
+    @see https://developers.google.com/search/docs/advanced/appearance/snippet
+#}}
+{{ if seo_description }}
+    <meta name="description" content="{{ seo_description }}">
+{{ elseif seo:collection_defaults }}
+    <meta name="description" content="{{ partial:snippets/seo/description/fallback }}">
+{{ /if }}

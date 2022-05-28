@@ -1,9 +1,6 @@
-r
 const plugin = require('tailwindcss/plugin')
 
-
 const base = plugin(function ({ addComponents, addBase, theme }) {
-
     addBase({
         '@font-face': [
             {

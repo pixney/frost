@@ -1,0 +1,12 @@
+{{# Trackers #}}
+{{ if (environment == 'local' && seo:trackers_local) or (environment == 'staging' && seo:trackers_staging) or (environment == 'production' && seo:trackers_production) }}
+    {{ if seo:use_fathom && seo:fathom_use_custom_domain }}
+        <script src="{{ seo:fathom_custom_script_url }}" site="{{ seo:fathom }}"
+            defer>
+        </script>
+    
+    {{ elseif seo:use_fathom }}
+        <script src="https://cdn.usefathom.com/script.js" site="{{ seo:fathom }}" defer>
+        </script>
+    {{ /if }}
+{{ /if }}
