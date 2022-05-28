@@ -1,4 +1,13 @@
 export_paths:
+  - content
+  - config/filesystems.php
+  - config/statamic/assets.php
+  - resources/blueprints
+  - resources/fieldsets
+  - resources/css/site.css
+  - resources/views
+  - routes/web.php
+  - public/assets
   - public/webfont
   - frost
   - package.json
