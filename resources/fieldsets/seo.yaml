@@ -1,0 +1,214 @@
+title: SEO
+fields:
+  -
+    handle: section_basic
+    field:
+      type: section
+      instructions: 'Basic SEO settings'
+      display: Basic
+  -
+    handle: seo_title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: 'Page title'
+      character_limit: 70
+      instructions: 'Title links are critical to giving users a quick insight into the content of a result and why it is relevant to their query. It is often the primary piece of information people use to decide which result to click on, so it is important to use high-quality title text on your web pages. [Read more..](https://developers.google.com/search/docs/advanced/appearance/title-link)'
+  -
+    handle: seo_description
+    field:
+      antlers: false
+      display: 'Meta description'
+      type: textarea
+      icon: textarea
+      instructions: 'Google will sometimes use the <meta name="description"> tag from a page to generate a snippet in search results, if we think it gives users a more accurate description than would be possible purely from the on-page content. A meta description tag generally informs and interests users with a short, relevant summary of what a particular page is about. They are like a pitch that convince the user that the page is exactly what they are looking for. There is no limit on how long a meta description can be, but the snippet is truncated in Google Search results as needed, typically to fit the device width. [Read more...](https://developers.google.com/search/docs/advanced/appearance/snippet)'
+      listable: hidden
+      instructions_position: above
+      read_only: false
+      character_limit: '160'
+  -
+    handle: section_advanced
+    field:
+      type: section
+      instructions: 'Advanced SEO settings'
+      display: Advanced
+  -
+    handle: seo_noindex
+    field:
+      type: toggle
+      instructions: 'Instruct crawlers not to index this entry, also excludes it from the sitemap.xml.'
+      instructions_position: below
+      listable: hidden
+      width: 50
+      display: No-index
+  -
+    handle: seo_nofollow
+    field:
+      type: toggle
+      instructions: 'Instruct crawlers not to follow links on this page.'
+      instructions_position: below
+      listable: hidden
+      width: 50
+      display: No-follow
+  -
+    handle: seo_canonical_type
+    field:
+      options:
+        entry: 'Current entry'
+        current: 'Current domain'
+        external: 'External domain'
+      display: 'Canonical URL'
+      type: button_group
+      default: entry
+      icon: button_group
+      instructions: 'Where should the canonical URL for this entry point to.'
+      listable: hidden
+  -
+    handle: seo_canonical_current
+    field:
+      mode: default
+      create: true
+      localizable: true
+      display: 'Canonical URL'
+      type: entries
+      icon: entries
+      listable: hidden
+      instructions_position: above
+      read_only: false
+      width: 66
+      instructions: 'If this is an entry with duplicate content. Enter the original URL for this content.'
+      validate:
+        - 'required_if:seo_canonical_type,current'
+      if:
+        seo_canonical_type: 'equals current'
+  -
+    handle: seo_canonical_external
+    field:
+      input_type: url
+      display: 'Canonical URL'
+      type: text
+      icon: text
+      listable: hidden
+      validate:
+        - 'required_if:seo_canonical_type,external'
+      if:
+        seo_canonical_type: 'equals external'
+  -
+    handle: section_og
+    field:
+      type: section
+      instructions: 'Open Graph meta tags for social sharing'
+      display: 'Open Graph'
+  -
+    handle: og_title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: 'Social title'
+      instructions: 'This entries OG title, defaults to custom SEO title and title.'
+  -
+    handle: og_description
+    field:
+      antlers: false
+      display: 'Social description'
+      type: textarea
+      icon: textarea
+      instructions: 'This entries OG description, defaults to meta description.'
+      listable: hidden
+      instructions_position: above
+      read_only: false
+  -
+    handle: og_image
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      max_files: 1
+      display: 'Social image'
+      type: assets
+      icon: assets
+      listable: hidden
+      instructions: 'This entries OG image. Defaults to global site OG image. The recommended size is 1200px x 630px. The image will be focal cropped to this dimension.'
+      instructions_position: below
+      read_only: false
+      width: 50
+  -
+    handle: twitter_image
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      max_files: 1
+      display: 'Twitter image'
+      type: assets
+      icon: assets
+      listable: hidden
+      nstructions: 'This entries Twitter image. Defaults to global site Twitter image. Images should have an aspect ratio of 2:1 with minimum dimensions of 300x157. This image will be focal cropped to this dimension.'
+      instructions_position: below
+      read_only: false
+      width: 50
+  -
+    handle: section_sitemap
+    field:
+      type: section
+      instructions: 'Sitemap configuration'
+      display: Sitemap
+  -
+    handle: sitemap_change_frequency
+    field:
+      options:
+        always: Always
+        hourly: Hourly
+        daily: Daily
+        weekly: Weekly
+        monthly: Monthly
+        yearly: Yearly
+        never: Never
+      clearable: false
+      multiple: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      instructions: 'How often to instruct search engines to crawl.'
+      instructions_position: below
+      width: 50
+      default: weekly
+      listable: hidden
+      display: 'Change frequency'
+  -
+    handle: sitemap_priority
+    field:
+      type: text
+      display: Priority
+      default: 0.5
+      instructions: 'Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites, it only lets the search engines know which pages you deem most important for the crawlers.'
+      instructions_position: below
+      width: 50
+      listable: hidden
+  -
+    handle: section_schema
+    field:
+      type: section
+      instructions: 'Custom JSON-ld schema objects'
+      display: 'JSON-ld Schema'
+  -
+    handle: schema_jsonld
+    field:
+      antlers: false
+      display: 'JSON-ld schema'
+      type: textarea
+      icon: textarea
+      instructions: 'Custom JSON-ld objects. Will be wrapped in the appropriate script tag.'
+      listable: hidden
+      instructions_position: above
+      read_only: false

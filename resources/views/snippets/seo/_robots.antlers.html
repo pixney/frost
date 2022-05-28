@@ -1,0 +1,20 @@
+{{# 
+    @name ROBOTS No follow and No index
+    @description Manage how robots should index your webpage
+#}}
+<!-- _robots.antlers.html -->
+{{ if
+    (environment == 'local' && !seo:noindex_local) or
+    (environment == 'staging' && !seo:noindex_staging) or
+    (environment == 'production' && !seo:noindex_production)
+}}
+    {{ if seo_noindex & seo_nofollow }}
+        <meta name="robots" content="noindex, nofollow">
+    {{ elseif seo_nofollow }}
+        <meta name="robots" content="nofollow">
+    {{ elseif seo_noindex }}
+        <meta name="robots" content="noindex">
+    {{ /if }}
+{{ else }}
+    <meta name="robots" content="noindex, nofollow">
+{{ /if }}

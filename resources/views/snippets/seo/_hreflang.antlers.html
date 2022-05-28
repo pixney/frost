@@ -1,0 +1,17 @@
+{{# 
+    @name Hreflang
+    @description The hreflang attribute (also referred to as rel="alternate" 
+    hreflang="x") tells Google which language you are using on a specific page, 
+    so the search engine can serve that result to users searching in that 
+    language.
+    
+    @see https://moz.com/learn/seo/hreflang-tag
+#}}
+
+{{ if seo:hreflang_auto }}
+    {{ if not seo_noindex and seo_canonical_type == 'entry' and current_full_url === permalink }}
+        {{ locales all="false" }}
+            <link rel="alternate" hreflang="{{ locale:full | replace('_','-') }}" href="{{ permalink }}">
+        {{ /locales }}
+    {{ /if }}
+{{ /if }}
