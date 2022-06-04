@@ -9,6 +9,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 37f7f5a8-5b68-4005-9638-71102d72fa4f
-updated_at: 1653756356
+updated_at: 1654357603
 template: home
 ---
