@@ -2,17 +2,17 @@ const plugin = require('tailwindcss/plugin')
 
 const base = plugin(function ({ addComponents, addBase, theme }) {
     addBase({
-        'strong':{
-            fontWeight:theme('fontWeight.bold')
+        'strong': {
+            fontWeight: theme('fontWeight.bold'),
         },
-        '*':{
-            fontWeight:theme('fontWeight.normal')
+        '*': {
+            fontWeight: theme('fontWeight.normal')
         },
-        'button':{
+        'button': {
 
         },
-        'a':{
-            
+        'a': {
+
         }
     })
 })

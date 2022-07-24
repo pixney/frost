@@ -22,15 +22,15 @@ mix.postCss('resources/css/tailwind.css', 'public/css', [
 mix.browserSync({
     proxy: process.env.APP_URL,
     files: [
-        'resources/views/**/*.html', 
-        'public/**/*.(css|js)', 
+        'resources/views/**/*.html',
+        'public/**/*.(css|js)',
     ],
     // Option to open in non default OS browser.
     // browser: "firefox",
     notify: false
 })
 if (mix.inProduction()) {
-   mix.version();
+    mix.version();
 }
 
 /*

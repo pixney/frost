@@ -1,9 +1,9 @@
 {{ seo:collection_defaults | where('collection', {collection}) }}
 {{ if fallback == 'field' }}
-    {{ scope:field }}
-        {{ field[field_handle] | strip_tags | trim | truncate(157, '...') }}
-    {{ /scope:field }}
-
+{{ scope:field }}
+{{ field[field_handle] | strip_tags | trim | truncate(157, '...') }}
+{{ /scope:field }}
 {{ elseif fallback == 'custom_text' }}
-    {{ custom_text }}
+{{ custom_text }}
 {{ /if }}
+{{/seo:collection_defaults}}

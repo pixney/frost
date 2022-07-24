@@ -1,0 +1,7 @@
+{{ bard }}
+    {{ if type === "text" }}
+        {{ text }}
+    {{ else }}
+        {{ partial:components/{{type}}}}
+    {{ /if }}
+{{ /bard }}

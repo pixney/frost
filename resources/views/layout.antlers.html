@@ -1,19 +1,25 @@
 <!doctype html>
 <html lang="{{ site:short_locale }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{ partial:snippets/seo }}
-        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
-        <script src="{{ mix src='/js/site.js' }}" defer></script>
-    </head>
-    <body class="">
-        
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ partial:snippets/seo }}
+    <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
+    <script src="{{ mix src='/js/site.js' }}" defer></script>
+</head>
+<body class="">
 
-        {{ partial:components/navigation }}
-        {{ partial:components/scroller }}
-       
-        {{ template_content }}
-    </body>
+
+    {{ partial:components/navigation }}
+    {{ partial:components/scroller }}
+
+
+    {{ content_blocks_replicator }}
+        {{ partial:blocks/{{type}} }}
+    {{/content_blocks_replicator}}
+
+
+    {{ template_content }}
+</body>
 </html>

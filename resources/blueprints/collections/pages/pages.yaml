@@ -30,6 +30,19 @@ sections:
           type: template
           display: Template
           localizable: true
+      -
+        import: content_blocks
+      -  
+        handle: seo_description_fallback_field
+        field:
+          input_type: text
+          antlers: false
+          display: 'Seo Description Fallback Field'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
   sidebar:
     display: Sidebar
     fields:

@@ -1,11 +1,16 @@
 title: SEO
 data:
   noindex_local: true
-  noindex_staging: true
+  noindex_staging: false
   noindex_production: false
+  collection_defaults:
+    -
+      collection: pages
+      fallback: field
+      field_handle: seo_description_fallback_field
   hreflang_auto: true
   json_ld_type: organization
-  organization_name: sasas
+  organization_name: json_ld_organisation_name
   breadcrumbs: false
   og_image: 6193640f47bcf_etienne-swanepoel-4ONFJQd0Jsc-unsplash.jpeg
   twitter_image: 6193640f47bcf_etienne-swanepoel-4ONFJQd0Jsc-unsplash.jpeg
