@@ -2,6 +2,7 @@ export_paths:
   - content
   - config/filesystems.php
   - config/statamic/assets.php
+  - config/statamic/antlers.php
   - resources/blueprints
   - resources/fieldsets
   - resources/css

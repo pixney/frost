@@ -1,7 +1,7 @@
 {
     "name": "pixney/frost",
     "minimum-stability": "dev",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "extra": {
         "statamic": {
             "name": "Frost",
